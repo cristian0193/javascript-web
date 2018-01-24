@@ -1,7 +1,19 @@
-const request = require('request');
+// request con callbacks
+// const request = require('request');
+//
+// request('http://google.com', function() {
+//   console.log("Termine la peticion de google");
+// });
+//
+// console.log("Codigo despues de peticion a google");
 
-request('http://google.com', function() {
-  console.log("Termine la peticion de google");
+// request utilizando promesas
+const request = require('request-promise');
+
+request('http://google.com').then(function(html) {
+  console.log('Termine la peticion de Google');
+}).catch(function(err) {
+  console.log(err);
 });
 
-console.log("Codigo despues de peticion a google");
+// Creacion de mis propias promesas
